@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Signika+Negative&display=swap');
+
+body{
+  z-index: 999;
+}
+
+img { 
+    width: 100%;
+    height: auto;
+    opacity: 0.5;
+  }
+
+.better {
+    font-size: 4rem;
+    padding-right: 4rem;
+}
+.higher{
+    display: inline-block;
+  
+  -webkit-transform: scale(1, 3);
+  -moz-transform: scale(1, 3);
+  -o-transform: scale(1, 3);
+  transform: scale(1, 3);
+}
+.further{
+    margin-left: 15rem;
+    font-style: italic;
+}
+
+.divider{
+    font-size: 3rem;
+}
+
+footer{
+  height: 24rem;
+}
+
+footer a{
+  text-decoration: none;
+}
+
+
+.btn-login{
+  width: fit-content;
+  background-color: #de6114;
+  font-size: 1.1rem;
+}
+
+.btn-login:hover{
+  color: white;
+  background-color: #d92409;
+  font-weight: bolder;
+}
+
+/* hero image */
+
+.hero-1{
+  background: url(../img/hero-1.jpg);
+  width: 100%;
+  height: 100vh;
+  background-size:cover;
+  background-repeat: no-repeat;
+  
+}
+
+.hero-2{
+  background: url(../img/hero-2.jpg);
+  background-size:cover;
+  background-repeat: no-repeat;
+  
+}
+
+.relative{
+  position: relative;
+}
+
+.overlay-right{
+  position: absolute;
+  top: 50%;
+  left: 75%;
+}
+
+.overlay-left{
+  position: absolute;
+  top: 50%;
+  right: 75%;
+}
