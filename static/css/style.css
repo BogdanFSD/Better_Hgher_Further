@@ -196,11 +196,10 @@ footer a{
 
 
 .inp-wid{
-  max-width: 70%;
+  max-width: 100%;
 }
 
-button{
-  width: 50%;
-  margin-left: 6.5rem;
-  margin-top: 2rem;
+.btn-form{
+  position: absolute;
+  left:10%
 }
