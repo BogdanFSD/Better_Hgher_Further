@@ -3,6 +3,7 @@
 {% block head_title %}
     Contact Us
 {% endblock %}
+
 {% block content %}
 <h1 class="text-center">
     Contact Us
@@ -11,7 +12,10 @@
 <div class="container d-flex justify-content-between">
     <div class="container  ">
         <div class="col-10">
-            <form action="betterhigherfurther@example.com" method="post" enctype="text/plain" class="">
+            <form onsubmit="return sendMail(this);" method="POST" id="contact_form">
+              {% csrf_token %}
+              <h2>Call Us</h2>
+              <p><i class="fa-solid fa-phone"></i> 07717 755 970</p>
                 <div class=" form-group">
                     <input class="form-control mb-3 inp-wid" type="text" name="name" id="contact-name" placeholder="Name" title="Enter your name">
                 </div>
@@ -21,7 +25,7 @@
                 <div class="">
                     <textarea class="form-control rounded inp-wid" name="classes-choice" id="classes-choice" cols="30" rows="10" placeholder="Write your message here." title="Write your message here."></textarea>
                 </div>
-                <div class="col-12  d-flex justify-content-center mt-3">
+                <div class="col-12  d-flex justify-content-center my-3">
                   <input type="submit" class="btn btn-login" value="Submit Button">
                 </div>
             </form>
@@ -35,42 +39,4 @@
         </div>
     </div>
 </div>
-
-<!-- <div class="container">
-    <div class="row">
-        <div class="col ">
-            <h3 class="col-md-4 d-flex justify-content-center mr-1">Get In Touch</h3>
-            <!-- <p><i class="fa-solid fa-location-dot"></i> Mandale Business Park, Durham</p>
-            <p><i class="fa-solid fa-phone"></i> 07717 755 970</p> -->
-            <!-- <form action="betterhigherfurther@example.com" method="post" enctype="text/plain">
-                <div class="container">
-                <div class=" form-group">
-                  <div class="col-md-4  mr-1">
-                    <input class="form-control mb-3" type="text" name="name" id="contact-name" placeholder="Name" title="Enter your name">
-                  </div>
-                  <div class=" form-group">
-                  <div class="col-md-4 ">
-                    <input class="form-control mb-3" type="email" name="email" id="contact-email" placeholder="Email Address" title="Enter your email">
-                  </div>
-                </div>
-                </div>
-                <div class="">
-                  <div class="col-md-4 position-map ">
-                    <textarea class="form-control rounded" name="classes-choice" id="classes-choice" cols="30" rows="10" placeholder="Write your message here." title="Write your message here."></textarea>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-4 d-flex justify-content-center">
-                    <button type="submit" class="btn btn-login form">Send</button>
-                  </div>
-                </div>
-                <div class="position-map ">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20082.060261950617!2d-3.072874476660153!3d51.01139095128356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486df50bea5a1bfb%3A0x98a6eaff6ef177f2!2sBlackbrook%20Leisure%20Centre%20%26%20Spa!5e0!3m2!1suk!2suk!4v1673315536060!5m2!1suk!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-
-                </div>
-            </div>
-              </form>
-        </div>
-    </div>
-</div> --> -->
 {% endblock%}
