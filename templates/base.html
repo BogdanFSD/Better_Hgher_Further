@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Better Higher Further">
     <meta name="keywords" content="Training, gym, yoga, health, health center">
-    <!--Bootstrap Link-->
+   <!--Bootstrap Link-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -90,28 +90,9 @@
           </nav>  
         
     </header>
-    <section>
-      <div class="container relative"></div>
-        <div class="row">
-          <div class="col hero-1 ">
-            <div class="overlay-left">
-              {% block gym %}
-              {% endblock %}
-            </div>
-          </div>
-          <div class="col hero-2 ">
-            <div class="overlay-right">
-              {% block yoga %}
-              {% endblock %}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     {% block content %}
-
-    {% endblock%}
-    
+    {% endblock %}
+   
   <footer class="text-white text-center text-lg-start  bg-dark" >
     <!-- Grid container -->
     <div class="container p-4">
@@ -120,24 +101,17 @@
         <!--Grid column-->
         <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
           <h5 class="text-uppercase mb-4">About company</h5>
-
           <p>
             Better Higher Further takes care about  customers and offers the best for You.
           </p>
-
           <p>
             Join our training with proffesional trainers it's never been so easy.
           </p>
-
-          
         </div>
-        
-        <!--Grid column-->
-
+     
         <!--Grid column-->
         <div class="col-lg-4 col-md-6 mb-4 mb-md-0 mt-4">
-          
-
+     
           <ul class="fa-ul" style="margin-left: 1.65em;">
             <li class="mb-3">
               <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">New York, NY 10012, US</span>
@@ -155,7 +129,6 @@
         </div>
         <!--Grid column-->
 
-        <!--Grid column-->
         <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
           <h5 class="text-uppercase mb-4">Opening hours</h5>
 
@@ -178,7 +151,6 @@
         </div>
         <!--Grid column-->
       </div>
-      <!--Grid row-->
     </div>
     <div class=" d-flex justify-content-center mb-3">
       <!-- Facebook -->
@@ -191,18 +163,16 @@
       <a type="button" class="btn btn-outline-primary btn-lg mx-2"><i class="fab fa-linkedin-in"></i></a>
       <!-- Linkedin -->
     </div>
-
     <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    <div class="text-center p-3 foo" >
       © Copyright  <script>document.write(new Date().getFullYear())</script> 
       <a class="text-white" href="{% url 'home' %}">Better Higher Further</a>
     </div>
-    <!-- Copyright -->
   </footer>
-    
     <!--Bootstrat js-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <!--Fontawesome Kit-->
     <script src="https://kit.fontawesome.com/7daaaf94bb.js" crossorigin="anonymous"></script>
+    
 </body>
 </html>

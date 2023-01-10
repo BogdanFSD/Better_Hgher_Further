@@ -72,6 +72,10 @@ color: #de6114;
   bottom: -1100%;
 }
 
+.form{
+  width: 8rem;
+}
+
 /* HERO IMAGE */
 
 .hero-1{
@@ -98,6 +102,21 @@ color: #de6114;
   position: relative;
 }
 
+
+.background-im{
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), transparent),
+  linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent),
+   url(../img/back-train.jpg);
+  height: 100vh;
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
+.img-responsive{
+  max-width: 77%;
+  height: 40%;
+  margin-left: 3.5rem;
+}
 /* VISIBILITY OF THE TEXT ON TOP OF HERO IMAGE */
 
 .overlay-right{
@@ -138,7 +157,10 @@ bottom:-1000%;
   width: 50rem;
 }
 
-
+.high{
+  height: 299.33px;
+  width: 100%;
+}
 
 /* STYLING FOR YOGA PART */
 
@@ -160,4 +182,25 @@ footer{
 
 footer a{
   text-decoration: none;
+}
+
+.foo{
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.training{
+  position: absolute;
+  top: 176%;
+  left: 10%;
+}
+
+
+.inp-wid{
+  max-width: 70%;
+}
+
+button{
+  width: 50%;
+  margin-left: 6.5rem;
+  margin-top: 2rem;
 }

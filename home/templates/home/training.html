@@ -4,5 +4,116 @@
     Training
 {% endblock %}
 {% block content %}
-Training PAGE
+<section class="">
+    <h1 class="text-center my-3">Training</h1>
+    <div class="container d-flex justify-content-center background-im position-relative mb-5">
+        <div class="table-responsive w-75 position-absolute top-50 start-50 translate-middle">
+            <table class="table table-bordered border-light mb-5 text-white">
+                <thead>
+                <tr>
+                    <th scope="col " class="bg-dark"></th>
+                    <th scope="col " class="bg-danger">Monday</th>
+                    <th scope="col " class="bg-danger">Tuesday</th>
+                    <th scope="col " class="bg-danger">Wednesday</th>
+                    <th scope="col " class="bg-danger">Thursday</th>
+                    <th scope="col " class="bg-danger">Friday</th>
+                    <th scope="col " class="bg-danger">Saturday</th>
+                    <th scope="col " class="bg-danger">Sunday</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">07:00-08:00</th>
+                    <td>PT-led Small Group Training</td>
+                    <td></td>
+                    <td>PT-led Small Group Training</td>
+                    <td></td>
+                    <td>PT-led Small Group Training</td>
+                    <td></td>
+                    <td class="bg-dark">Day Off</td>
+                </tr>
+                <tr>
+                    <th scope="row">08:00-09:00</th>
+                    <td>Open Mat</td>
+                    <td>Open Mat</td>
+                    <td>Open Mat</td>
+                    <td>Open Mat</td>
+                    <td>Open Mat</td>
+                    <td>MaxFit</td>
+                    <td class="bg-dark">Day Off</td>
+                </tr>
+                <tr>
+                    <th scope="row">09:00-10:00</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Pad Class</td>
+                    <td class="bg-dark">Day Off</td>
+                </tr>
+                <tr>
+                    <th scope="row">10:00-11:00</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Bag Bash</td>
+                    <td class="bg-dark">Day Off</td>
+                </tr>
+                <tr class=" blank-row">
+                    <th scope="row" colspan="8" class="text-white text-center bg-dark"> Break, Cleaning and Desinfection, Trainers rotation</th>
+                </tr>
+                <tr>
+                    <th scope="row">14:00-15:00</th>
+                    <td></td>
+                    <td>Urban Cadets (Primary)</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="bg-dark">Day Off</td>
+                </tr>
+                <tr>
+                    <th scope="row">15:00-16:00</th>
+                    <td></td>
+                    <td>Urban Cadets (Secondary)</td>
+                    <td></td>
+                    <td></td>
+                    <td>Durham University (Intro)</td>
+                    <td></td>
+                    <td class="bg-dark">Day Off</td>
+                </tr>
+                <tr>
+                    <th scope="row">16:00-17:00</th>
+                    <td>Bag Bash</td>
+                    <td>Grappling</td>
+                    <td>DBMA</td>
+                    <td>Kick Boxing</td>
+                    <td>Durham University (Continuation)</td>
+                    <td></td>
+                    <td class="bg-dark">Day Off</td>
+                </tr>
+                <tr>
+                    <th scope="row">17:00-18:00</th>
+                    <td>PT-led Small Group Training</td>
+                    <td>Panantukan</td>
+                    <td>PT-led Small Group Training</td>
+                    <td>Krav Maga</td>
+                    <td>PT-led Small Group Training</td>
+                    <td></td>
+                    <td class="bg-dark">Day Off</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="position-absolute top-100 start-50 translate-middle  ">
+            <a class="btn btn-login  " href="{% url 'account_login' %}">
+                Book Training
+            </a>
+        </div>
+    </div>
+</section>
+
 {% endblock%}

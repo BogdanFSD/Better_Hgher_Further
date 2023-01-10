@@ -3,56 +3,72 @@
 {% block head_title %}
     Homepage
 {% endblock %}
-{% block gym %}
-<div>
-    <h1 >
-        Keep your body fit & strong
-    </h1>
-</div>
-<div class=" justify-content-center">
-    <img src="../../../static/img/gym-ho(1).jpg" class="size-photo-home-1 " alt="Hands with dumbels">
-</div>
-<div class="container">
-    <div class="row">
-      <div class=" gym-col-pos ">
-        <p class="text-center"> Nowadays training with additional weight become highly popular and no wonder. Such life style 
-            gives you lots addvantages as makes body stronger, improves heart health, greate mobility
-            and flexibility. Apart of phhysical health such type of training chanhe You as a person. People
-             who train more than three month become more self comfident, disciplined and motivated for new 
-             achievements. If this is something you are looking to improve also than join our team of proffesionals
-             and let's ROCK!
-        </p>
-      </div>
-    </div>
-    <div class="btn-gym  "><a class="btn btn-login" href="#">Find Out More</a></div>
-</div>
-
-{% endblock %}
-{% block yoga %}
-    <div>
-        <h1>
-            Connect Your Mind, Body And Soul
-        </h1>
-    </div>
-    <div class=" justify-content-center">
-        <img src="../../../static/img/yoga-home.jpg" class="size-photo-home-2 " alt="Woman making yoga exercise">
-    </div>
-    <div class="container">
-        <div class="row">
-          <div class=" gym-col-pos ">
-            <p class="text-center"> 
-                For those who preffer calmer way of training but defenitely not easier we offer Yoga. Especially now Yoga might 
-                be powerfull as it helps to be more concentrated and get rid of stress at the same time and that is only small 
-                bonusses that yoga offers. Yoga can ease arthritis symptoms, protect you from injury, increase cognitive availability
-                 big community where you can find variety of people and potential friends. Sounds like for you? Check out what our 
-                 amazing team offer for you.
-            </p>
+{% block content %}
+<section>
+    <div class="container relative"></div>
+      <div class="row">
+        <div class="col hero-1 ">
+          <div class="justify-content-center">
+            <div>
+                <h1 class="text-white text-center my-5" >
+                    Keep your body fit & strong
+                </h1>
+            </div>
+            <div class=" justify-content-center">
+                <img src="../../../static/img/gym-ho(1).jpg" class="img-responsive" alt="Two legs wtih weight in front of him">
+            </div>
+            <div class="container">
+                <div class="row">
+                  <div class=" justify-content-center mt-5 ">
+                    <p class="text-center text-white"> Nowadays training with additional weight become highly popular and no wonder. Such life style 
+                        gives you lots addvantages as makes body stronger, improves heart health, greate mobility
+                        and flexibility. Apart of phhysical health such type of training chanhe You as a person. People
+                         who train more than three month become more self comfident, disciplined and motivated for new 
+                         achievements. If this is something you are looking to improve also than join our team of proffesionals
+                         and let's ROCK!
+                    </p>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-center mt-5 ">
+                    <a class="btn btn-login  " href="{% url 'training' %}">
+                        Find Out More
+                    </a>
+                </div>
+            </div>
           </div>
         </div>
+        <div class="col hero-2 ">
+          <div class="justify-content-center">
+            <div>
+                <h1 class="text-white text-center my-5">
+                    Connect Your Mind, Body And Soul
+                </h1>
+            </div>
+            <div class=" justify-content-center ">
+                <img src="../../../static/img/yoga-home.jpg" class="img-responsive" alt="Woman making yoga exercise">
+            </div>
+            <div class="container">
+                <div class="row">
+                  <div class=" justify-content-center mt-5">
+                    <p class="text-center text-white"> 
+                        For those who preffer calmer way of training but defenitely not easier we offer Yoga. Especially now Yoga might 
+                        be powerfull as it helps to be more concentrated and get rid of stress at the same time and that is only small 
+                        bonusses that yoga offers. Yoga can ease arthritis symptoms, protect you from injury, increase cognitive availability
+                         big community where you can find variety of people and potential friends it is so important. Sounds like for you? Check out what type of yoga our 
+                         amazing team can offer for you.
+                    </p>
+                  </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center mt-5 ">
+                <a class="btn btn-login  " href="{% url 'training' %}">
+                    Find Out More
+                </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="btn-gym  ">
-        <a class="btn btn-login" href="#">
-            Find Out More
-        </a>
-    </div>
+  </section>
+
 {% endblock %}

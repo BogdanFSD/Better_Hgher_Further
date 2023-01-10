@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.sites',
-    'django_rename_app',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -50,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'home',
+    'django_summernote',
     'booking',
     
 ]
