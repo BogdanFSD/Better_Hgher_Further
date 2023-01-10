@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'home',
     'django_summernote',
+    'crispy-forms',
     'booking',
     
 ]
@@ -59,7 +60,7 @@ SITE_ID = 1
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'optional'
-ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = False
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 
 LOGIN_URL = '/accounts/login/'
