@@ -1,5 +1,5 @@
 from django import forms
-from django.forms import ModelForm
+from django.forms import ModelForm, TextInput, EmailInput, Select
 from .models import Booking_class
 
 
@@ -14,5 +14,13 @@ class Booking_class_form(forms.ModelForm):
         model = Booking_class
         fields = ('trainers', 'requested_date', 'requested_time')
         widgets = {
-            'requested_date': DateInput(),
-        }
+            'requested_date': DateInput(attrs={
+                'class': "form-control text-center attr"
+            }),
+            'trainers': Select(attrs={
+                'class': "form-control text-center attr"
+            }),
+            'requested_time': Select(attrs={
+                'class': "form-control text-center attr"
+            })
+         }

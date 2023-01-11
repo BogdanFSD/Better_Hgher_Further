@@ -211,3 +211,7 @@ footer a{
 	margin: 1rem auto 2rem auto;
 	box-shadow: 0.1rem 0.1rem #000;
 }
+
+.attr{
+  font-weight: 500;
+}
