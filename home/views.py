@@ -11,7 +11,6 @@ def training(request):
     return render(request, 'home/training.html')
 
 
-    
 def about(request):
     return render(request, 'home/about.html')
 

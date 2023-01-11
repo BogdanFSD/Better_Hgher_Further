@@ -1,4 +1,4 @@
-const contactUsForm = document.getElementById('contact_form');
+
 
 
 function sendEmail(contactForm) {
