@@ -10,8 +10,6 @@ class DateInput(forms.DateInput):
 
 
 class Booking_class_form(forms.ModelForm):
-    
-
     class Meta:
         model = Booking_class
         fields = ('trainers', 'requested_date', 'requested_time')

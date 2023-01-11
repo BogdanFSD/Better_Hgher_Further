@@ -157,14 +157,14 @@ def edit(request, booking_id):
         return HttpResponseRedirect(url)
 
     training_edit = get_object_or_404(Booking_class, pk=booking_id)
-    training_edit.requested_date = datetime.datetime.strftime(
-                            training_edit.requested_date, '%d/%m/%Y')
+    # training_edit.requested_date = datetime.datetime.strftime(
+    #                         training_edit.requested_date, '%d/%m/%Y')
 
     if request.method == 'POST':
-        booking_form = Booking_class_form(request.POST, instance=training_edit)
+        booking_form = Booking_class_form(data=request.POST, instance=training_edit)
 
         if booking_form.is_valid():
-            user.user_requested_trainers - request.POST('trainers')
+            user_requested_trainers = request.POST.get('trainers')
             user_requested_date = request.POST.get('requested_date')
             user_requested_time = request.POST.get('requested_time')
 
@@ -179,7 +179,7 @@ def edit(request, booking_id):
                     f"{user_requested_time} on {user_requested_date}.")
 
                 return render(request, 'booking/edit.html',
-                                  {'Booking_class_form': Booking_class_form})
+                                  {'booking_form': Booking_class_form})
             else:
                 booking_form.save()
                 messages.add_message(
@@ -198,7 +198,7 @@ def edit(request, booking_id):
 
         template = 'booking/edit.html'
         context = {
-            'booking_form': booking_form,
+            'booking_form': Booking_class_form,
             'training': training_edit,
             }
     return render(request, template, context)

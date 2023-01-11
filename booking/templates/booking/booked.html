@@ -40,10 +40,10 @@
                     <td>{{ training.requested_date }} @ {{ training.requested_time }}</td>
                     <td>{{ training.status }}</td>
                     <td>
-                        <a href="{% url 'edit' training.id %}" class="btn btn-success font-large">Amend</a>
+                        <a href="{% url 'edit' training.id %}" class="btn btn-success font-large">Edit</a>
                         <!-- Delete booking modal trigger -->
                         <button type="button" class="btn btn-danger font-large" data-bs-toggle="modal" data-bs-target="#deleteBooking">
-                            Cancel
+                            Delete
                         </button>
                         
                     </td>
@@ -53,14 +53,14 @@
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h3 class="modal-title" id="deleteBookingLabel">Cancel Booking</h3>
+                          <h3 class="modal-title" id="deleteBookingLabel">Delete Booking</h3>
                         </div>
                         <div class="modal-body">
                           Are you sure you want to cancel booking on {{ training.requested_date }} @ {{ training.requested_time }} with {{ trainin.trainers }}
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary font-large" data-bs-dismiss="modal">Close</button>
-                          <a href="{% url 'delete_booking' training.id %}" class="btn btn-danger font-large">Cancel Booking</a>
+                          <a href="{% url 'delete_booking' training.id %}" class="btn btn-danger font-large">Delete</a>
                         </div>
                       </div>
                     </div>
