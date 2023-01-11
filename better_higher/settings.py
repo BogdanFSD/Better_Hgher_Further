@@ -74,11 +74,17 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = False
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 
+
+
+
+
 # LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
+DATE_INPUT_FORMATS = ['%d-%m-%Y']
 
+DATE_FORMAT = ['%d-%m-%Y']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -155,6 +161,11 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_L10N = True
+
+# DATE_INPUT_FORMATS = ['%d-%m-%Y']
+
+
+
 
 USE_TZ = True
 

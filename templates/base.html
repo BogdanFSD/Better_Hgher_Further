@@ -55,7 +55,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item mx-3" href="{% url 'booking' %}">Book Training</a>
-                        <a class="dropdown-item mx-3" href="#">My Trainings</a>
+                        <a class="dropdown-item mx-3" href="{% url 'booked' %}">My Trainings</a>
                     </div>
                 </li>
                   {% endif %}
@@ -182,6 +182,7 @@
     <script src="https://kit.fontawesome.com/7daaaf94bb.js" crossorigin="anonymous"></script>
     <!--Send Email JS-->
     <script src="../static/js/sendEmail.js"></script>"
+    <!--I Think Therefore I Blog-->
     <script>
       setTimeout(function () {
           let messages = document.getElementById('msg');

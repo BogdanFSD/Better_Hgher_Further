@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head_title %}Booked Classes{% endblock %}
+
+{% block content %}
+
+<div>
+    <table class="table table-striped table-dark table-responsive-lg">
+        {% if user.is_superuser %}
+            <thead>
+                <tr>
+                    <th>Client</th>
+                    <th>Requested Date and Time</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for session in sessions %}
+                <tr>
+                    <td>{{ session.user }}</td>
+                    <td>{{ session.requested_date }} @ {{ session.requested_time }}</td>
+                    <td>{{ session.status }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        {% else %}
+            <thead>
+                <tr>
+                    <th>Personal Trainer</th>
+                    <th>Requested Date and Time</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for session in sessions %}
+                <tr>
+                    <td>{{ session.trainers }}</td>
+                    <td>{{ session.requested_date }} @ {{ session.requested_time }}</td>
+                    <td>{{ session.status }}</td>
+                    <td>
+                        <a href="#" class="btn btn-success font-large">Amend</a>
+                        <!-- Delete booking modal trigger -->
+                        <button type="button" class="btn btn-danger font-large" data-bs-toggle="modal" data-bs-target="#deleteBooking">
+                            Cancel
+                        </button>
+                        
+                    </td>
+                </tr>
+                <!-- Delete booking modal -->
+                <div class="modal fade" id="deleteBooking" tabindex="-1" aria-labelledby="deleteBookingLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h3 class="modal-title" id="deleteBookingLabel">Cancel Booking</h3>
+                        </div>
+                        <div class="modal-body">
+                          Are you sure you want to cancel booking on {{ session.requested_date }} @ {{ session.requested_time }} with {{ session.staff }}
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary font-large" data-bs-dismiss="modal">Close</button>
+                          <a href="#" class="btn btn-danger font-large">Cancel Booking</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+            </tbody>
+        {% endif %}
+    </table>
+</div>
+
+
+{% endblock %}
