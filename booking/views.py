@@ -1,4 +1,3 @@
-#import datetime
 from django.conf import settings
 from django.utils import formats
 from django.shortcuts import get_object_or_404, render
@@ -8,12 +7,9 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Booking_class
 from .forms import Booking_class_form
-from django.views.generic import DeleteView, CreateView, UpdateView, ListView
+from django.contrib.auth.decorators import login_required
 # import login_required
 import datetime
-# Create your views here.
-
-
 
 
 def check_if_available(user_requested_trainers, user_requested_date,
@@ -24,19 +20,15 @@ def check_if_available(user_requested_trainers, user_requested_date,
 
     return booking_slot
 
-#@login_required
+# @login_required#
+
+
+@login_required
 def booking_training(request):
     if request.method == 'GET':
-        if request.user.is_authenticated:
-            booking_class = Booking_class_form()
-        else:
-            messages.add_message(
-                request, messages.ERROR,
-                "In order to book training you need to log in."
-                "Login here.")
-            url = reverse('account_login')
-            return HttpResponseRedirect(url)
-
+        
+        booking_class = Booking_class_form()
+      
         return render(request, "booking/booking.html", {'Booking_class_form':
                                                         Booking_class_form})
     else:
@@ -47,7 +39,6 @@ def booking_training(request):
                 user_requested_date = request.POST.get('requested_date')
                 user_requested_time = request.POST.get('requested_time')
 
-                
                 bookin_available = check_if_available(user_requested_trainers,
                                                       user_requested_date,
                                                       user_requested_time)
@@ -62,7 +53,8 @@ def booking_training(request):
                                   {'Booking_class_form': Booking_class_form})
 
                 else:
-                    booking_data = Booking_class_form(data=request.POST).save(commit=False)
+                    booking_data = Booking_class_form(data=request.
+                                                      POST).save(commit=False)
                     booking_data.user = request.user
                     booking_data.save()
 
@@ -92,34 +84,36 @@ def booking_training(request):
             url = reverse('booking')
             return HttpResponseRedirect(url)
 
-#@login_required
-def check_booked_training(request):
-    if request.user.is_authenticated:
-        if request.user.is_superuser:
-            booked_classes = Booking_class.objects.filter(
-                trainers=request.user).order_by(requested_date)
-            booked_classes_count = Booking_class.objects.count()
-            if booked_classes_count == 0:
-                messages.add_message(request, messages.ERROR,
-                                     "Nothing booked.")
-            url = reverse('home')
-            return HttpResponseRedirect(url)
-        else:
-            booked_classes = Booking_class.objects.filter(
-                                user=request.user).order_by('requested_date')
-            booked_classes_count = Booking_class.objects.count()
-            if booked_classes_count == 0:
-                messages.add_message(
-                    request, messages.ERROR,
-                    "Nothing booked yet. Please book your training.")
-                url = reverse('booking')
-                return HttpResponseRedirect(url)
-        template = 'booking/booked.html'
-        context = {
-            'trainings': booked_classes
-        }
 
-        return render(request, template, context)
+
+@login_required
+def check_booked_training(request):
+    
+    if request.user.is_superuser:
+        booked_classes = Booking_class.objects.filter(
+            trainers=request.user).order_by(requested_date)
+        booked_classes_count = Booking_class.objects.count()
+        if booked_classes_count == 0:
+            messages.add_message(request, messages.ERROR,
+                                    "Nothing booked.")
+        url = reverse('home')
+        return HttpResponseRedirect(url)
+    else:
+        booked_classes = Booking_class.objects.filter(
+                            user=request.user).order_by('requested_date')
+        booked_classes_count = Booking_class.objects.count()
+        if booked_classes_count == 0:
+            messages.add_message(
+                request, messages.ERROR,
+                "Nothing booked yet. Please book your training.")
+            url = reverse('booking')
+            return HttpResponseRedirect(url)
+    template = 'booking/booked.html'
+    context = {
+        'trainings': booked_classes
+    }
+
+    return render(request, template, context)
 
 
 # class EditBookings(UpdateView):
@@ -143,25 +137,19 @@ def check_booked_training(request):
 
 #     messages.add_message(
 #         request, messages.SUCCESS,
-#             "Booking has been cancelled")   
+#             "Booking has been cancelled")
 
-
+@login_required
 def edit(request, booking_id):
-   
 
-
-    if not request.user.is_authenticated:
-        messages.add_message(request, messages.ERROR,
-                             "Sorry, you are not logged in.")
-        url = reverse('account_login')
-        return HttpResponseRedirect(url)
-
+    
     training_edit = get_object_or_404(Booking_class, pk=booking_id)
     # training_edit.requested_date = datetime.datetime.strftime(
     #                         training_edit.requested_date, '%d/%m/%Y')
 
     if request.method == 'POST':
-        booking_form = Booking_class_form(data=request.POST, instance=training_edit)
+        booking_form = Booking_class_form(data=request.POST,
+                                          instance=training_edit)
 
         if booking_form.is_valid():
             user_requested_trainers = request.POST.get('trainers')
@@ -179,7 +167,7 @@ def edit(request, booking_id):
                     f"{user_requested_time} on {user_requested_date}.")
 
                 return render(request, 'booking/edit.html',
-                                  {'booking_form': Booking_class_form})
+                              {'booking_form': Booking_class_form})
             else:
                 booking_form.save()
                 messages.add_message(
@@ -205,7 +193,7 @@ def edit(request, booking_id):
 
 
 def delete_booking(request, booking_id):
-   
+
     if not request.user.is_authenticated:
         messages.add_message(
             request, messages.ERROR,
