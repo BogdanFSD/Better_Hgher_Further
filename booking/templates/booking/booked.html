@@ -16,11 +16,11 @@
                 </tr>
             </thead>
             <tbody>
-                {% for session in sessions %}
+                {% for training in trainings %}
                 <tr>
-                    <td>{{ session.user }}</td>
-                    <td>{{ session.requested_date }} @ {{ session.requested_time }}</td>
-                    <td>{{ session.status }}</td>
+                    <td>{{ training.user }}</td>
+                    <td>{{ training.requested_date }} @ {{ class.requested_time }}</td>
+                    <td>{{ training.status }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
@@ -34,13 +34,13 @@
                 </tr>
             </thead>
             <tbody>
-                {% for session in sessions %}
+                {% for training in trainings %}
                 <tr>
-                    <td>{{ session.trainers }}</td>
-                    <td>{{ session.requested_date }} @ {{ session.requested_time }}</td>
-                    <td>{{ session.status }}</td>
+                    <td>{{ training.trainers }}</td>
+                    <td>{{ training.requested_date }} @ {{ training.requested_time }}</td>
+                    <td>{{ training.status }}</td>
                     <td>
-                        <a href="#" class="btn btn-success font-large">Amend</a>
+                        <a href="{% url 'edit' training.id %}" class="btn btn-success font-large">Amend</a>
                         <!-- Delete booking modal trigger -->
                         <button type="button" class="btn btn-danger font-large" data-bs-toggle="modal" data-bs-target="#deleteBooking">
                             Cancel
@@ -56,11 +56,11 @@
                           <h3 class="modal-title" id="deleteBookingLabel">Cancel Booking</h3>
                         </div>
                         <div class="modal-body">
-                          Are you sure you want to cancel booking on {{ session.requested_date }} @ {{ session.requested_time }} with {{ session.staff }}
+                          Are you sure you want to cancel booking on {{ training.requested_date }} @ {{ training.requested_time }} with {{ trainin.trainers }}
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary font-large" data-bs-dismiss="modal">Close</button>
-                          <a href="#" class="btn btn-danger font-large">Cancel Booking</a>
+                          <a href="{% url 'delete_booking' training.id %}" class="btn btn-danger font-large">Cancel Booking</a>
                         </div>
                       </div>
                     </div>

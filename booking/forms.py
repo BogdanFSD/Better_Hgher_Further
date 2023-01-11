@@ -10,7 +10,7 @@ class DateInput(forms.DateInput):
 
 
 class Booking_class_form(forms.ModelForm):
-    # requested_date = forms.DateField(input_formats=DATE_FORMAT)
+    
 
     class Meta:
         model = Booking_class
