@@ -92,17 +92,25 @@
               </div>
             </div>
           </nav>  
-        
+          <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    {% for message in messages %}
+                    <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                        {{ message | safe }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
     </header>
     {% block content %}
     {% endblock %}
-   
+  
   <footer class="text-white text-center text-lg-start  bg-dark" >
-    <!-- Grid container -->
     <div class="container p-4">
-      <!--Grid row-->
       <div class="row mt-4">
-        <!--Grid column-->
         <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
           <h5 class="text-uppercase mb-4">About company</h5>
           <p>
@@ -112,8 +120,6 @@
             Join our training with proffesional trainers it's never been so easy.
           </p>
         </div>
-     
-        <!--Grid column-->
         <div class="col-lg-4 col-md-6 mb-4 mb-md-0 mt-4">
      
           <ul class="fa-ul" style="margin-left: 1.65em;">
@@ -131,9 +137,7 @@
             </li>
           </ul>
         </div>
-        <!--Grid column-->
-
-        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+      <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
           <h5 class="text-uppercase mb-4">Opening hours</h5>
 
           <table class="table text-center text-white">
@@ -153,7 +157,6 @@
             </tbody>
           </table>
         </div>
-        <!--Grid column-->
       </div>
     </div>
     <div class=" d-flex justify-content-center mb-3">
@@ -179,6 +182,13 @@
     <script src="https://kit.fontawesome.com/7daaaf94bb.js" crossorigin="anonymous"></script>
     <!--Send Email JS-->
     <script src="../static/js/sendEmail.js"></script>"
+    <script>
+      setTimeout(function () {
+          let messages = document.getElementById('msg');
+          let alert = new bootstrap.Alert(messages);
+          alert.close();
+      }, 2500);
+  </script>
     
 </body>
 </html>
