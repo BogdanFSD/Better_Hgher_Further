@@ -109,19 +109,7 @@ color: #de6114;
 }
 /* VISIBILITY OF THE TEXT ON TOP OF HERO IMAGE */
 
-.overlay-right{
-  position: absolute;
-  top: 30%;
-  left: 60%;
-  color:#;
-}
 
-.overlay-left{
-  position: absolute;
-  top: 30%;
-  right: 65%;
-  color:#fff;
-}
 
 
 /* STYLING FOR GYM PART */
@@ -225,7 +213,7 @@ footer a{
   display: none;
 }
 
-@media (min-width:1201px) and (max-device-width: 1450px){
+@media (min-width:1201px){
   .p-size-1{
     width: 40%;
   }

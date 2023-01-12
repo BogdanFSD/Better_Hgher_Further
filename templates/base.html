@@ -1,5 +1,4 @@
 {% load  static %}
-{% load crispy_forms_tags %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,14 +16,9 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title> {% block head_title %}Better Higher Further{% endblock %}</title>
     <!--EmailJs-->
-    <script type="text/javascript"
+    <script >
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
     </script>
-    <script type="text/javascript">
-   (function(){
-      emailjs.init("PnNIz_5JC9qfsENAO");
-   })();
-</script>
 </head>
 <body>
     <header>
@@ -169,13 +163,13 @@
     </div>
     <div class=" d-flex justify-content-center mb-3">
       <!-- Facebook -->
-      <a type="button"  href="https://www.facebook.com/"  target="blank" class="btn btn-outline-primary btn-lg mx-2"><i class="fab fa-facebook-f"></i></a>
+      <a   href="https://www.facebook.com/"  target="blank" class="btn btn-outline-primary btn-lg mx-2"><i class="fab fa-facebook-f"></i></a>
       <!-- Instagram -->
-      <a type="button" href="https://www.instagram.com/" target="blank" class="btn btn-outline-primary btn-lg mx-2"><i class="fab fa-instagram"></i></a>
+      <a  href="https://www.instagram.com/" target="blank" class="btn btn-outline-primary btn-lg mx-2"><i class="fab fa-instagram"></i></a>
       <!-- Twitter -->
-      <a type="button" href="https://twitter.com/" target="blank" class="btn btn-outline-primary btn-lg mx-2"><i class="fab fa-twitter"></i></a>
+      <a  href="https://twitter.com/" target="blank" class="btn btn-outline-primary btn-lg mx-2"><i class="fab fa-twitter"></i></a>
       <!-- Linkedin -->
-      <a type="button" href="https://www.linkedin.com/" target="blank" class="btn btn-outline-primary btn-lg mx-2"><i class="fab fa-linkedin-in"></i></a>
+      <a  href="https://www.linkedin.com/" target="blank" class="btn btn-outline-primary btn-lg mx-2"><i class="fab fa-linkedin-in"></i></a>
       
     </div>
     <!-- Copyright -->
