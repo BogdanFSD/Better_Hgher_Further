@@ -4,7 +4,7 @@ body{
   overflow-x: hidden;
 }
 
-.navbar ul li a:hover {
+.navbar ul li:hover {
 	transform: scale(1.05);
 	transition: transform 300ms ease-in-out;
 }
@@ -44,7 +44,7 @@ color: #de6114;
 
 /* NAVBAR */
 
-.nav-link{
+.nav-link, .dropdown-item{
   color: #de6114;
   font-weight: 500;
 }
@@ -95,7 +95,7 @@ color: #de6114;
   width: 50%;
   background-size:cover;
   background-repeat: no-repeat;
-  z-index: 1;
+  
 }
 
 .relative{
