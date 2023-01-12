@@ -97,7 +97,7 @@ For people of all ages and genders to make their physical health better in the b
 1. As a **User** I can **easily create my account** so that **start using service of the heath center**.
 2. As a **User** I can **see what training are available** so that **I can easely choose**.
 3. As a **User** I can **find easely contact form or phone number** so that **I can get in contact immediately**
-
+4. As a **User** I can **find links to the gyms in social media** so that **I can connect**
 
 ## Returning User Stories
 
@@ -357,21 +357,143 @@ Below database diagram
 # Testing User stories
 
 
+## 1. As a **User** I can **easily create my account** so that **start using service of the heath center**
+
+|Feature|Action|Expected Result|Actual Result|
+|---|---|---|---| 
+|At navbar|Click on Log In/Sign Up button| Redirect to Log In page and once logged in receive conformation| As Expected
+
+![Sign in](for_readme/features/logiin.jpg)
+
+confirmation 
+
+![Sign in](for_readme/features/signinconf.jpg)
 
 
-# Validation
+## 2. As a **User** I can **see what training are available** so that **I can easely choose**.
+
+|Feature|Action|Expected Result|Actual Result|
+|---|---|---|---| 
+|At navbar|Click on Trainings| Redirect to page with available trainings| As Expected
+
+![Nav bar](for_readme/features/naav-bar.png)
+![Trainings](for_readme/features/training222.jpg)
+
+## 3. As a **User** I can **find easely contact form or phone number** so that **I can get in contact immediately**
+|Feature|Action|Expected Result|Actual Result|
+|---|---|---|---|
+|At navbar|Click on Contact Us | Redirect to page with Contact Us form and phone number on top, also user can find relevant information in at the footer| As Expected
+![Nav bar](for_readme/features/naav-bar.png)
+![contact s](for_readme/features/conta.jpg)
 
 
-########
+## 4. As a **User** I can **find links to the gyms in social media** so that **I can connect**
+|Feature|Action|Expected Result|Actual Result|
+|---|---|---|---|
+|At footer click on links|Go down till you would see 4 blue buttons that will redirect you to social media page | Once clicked you are redirected| As Expected
+![footer](for_readme/features/footer.jpg)
+
+
+## 5. As a **Returning User** I can **log in and book another training** so that **I want to keep going with training**
+|Feature|Action|Expected Result|Actual Result|
+|---|---|---|---|
+|Book training|log In, click Book, choose date and trainer, submit | Booked and received conformation| As Expected
+![footer](for_readme/features/bookingform.jpg)
+![footer](for_readme/features/bookingsucecessalert.jpg)
+
+
+## Browser Testin
+
+Websire tested on:
+- Mozilla Firefox
+- Google Chrome (desktop and mobile version)
+- Microsoft Edge
+- Safari for iOS
 
 
 [Table of Contests](#table-of-contests)
 
 
-# Testing
+## Manual Testing
 
 
-##########
+Testing been done on website manually like inputs, cliking links, edit and deleting form.
+
+- Alert messages showes correctly
+- Link are clickable
+- if you want to check some pages while you are not logged in wou will be redirected to home
+- CRUD functionality working ptoperly
+- Conformation messages appear appropriately
+
+
+[Table of Contests](#table-of-contests)
+
+
+# Validation
+
+## HTML Validation
+
+[W3c  Validation ](https://validator.w3.org/) Been used for code validation, all pages passed
+
+
+Home
+
+
+![Home](for_readme/Validations/homehtml.jpg)
+
+
+About
+
+
+![About](for_readme/Validations/abouthtml.jpg)
+
+
+Training
+
+
+![Training](for_readme/Validations/traininghtml.jpg)
+
+
+Booking
+
+
+![Booking](for_readme/Validations/bookinghtml.jpg)
+
+
+Booked
+
+
+![Booked](for_readme/Validations/bookedhtml.jpg)
+
+
+## CSS Validation
+
+[W3c CSS ](https://jigsaw.w3.org/css-validator/) Once appear to me 15 errors but due to bootstrap, unfortunately I didn't catch it
+
+CSS
+
+![CSS](for_readme/Validations/css%20validator.jpg)
+
+## JS Validation
+
+[JSHint](https://jshint.com) Used for validation of Javascript code. Received 0 errors
+
+Javascript
+
+
+![Javascript](for_readme/Validations/jsvalid.jpg)
+
+
+## PEP8
+
+
+[PEP8](http://pep8online.com) validate my code
+
+
+![Home Views](for_readme/Validations/HOMEview.jpg)
+![Models](for_readme/Validations/models.jpg)
+![Booking Views](for_readme/Validations/bookingview.jpg)
+![Forms Views](for_readme/Validations/forms.jpg)
 
 
 [Table of Contests](#table-of-contests)
@@ -380,16 +502,39 @@ Below database diagram
 # Bugs
 
 
-##########
-s
+- Bug: Initial Deployment django engine throw me an error.
+- Fix: My DATABASE_URL contained <> on sides which caused the issue
+- Bug: Form was not rendering to edit view but loaded for booking
+- Fix: When I defined {'form-1':form-2} I put form 2 instead
+- Bug: Booking didn't saved 
+- Fix: I created instance without request.Post 
+- Bug: On deployment 400 error
+- Fix: Fixed typo in ALLOWED_HOSTS
+
 
 [Table of Contests](#table-of-contests)
 
 
 # Deployment
 
+1. Create account on Heroku
+2. Click on the button in upper right corner and choose new app
+3. Select region and create app
+4. Sign Up in ElephantSQL to allow instantiation databases choose "Trynow for free"
+5. Connect your Github
+6. Create new Team and you account created
+7. Create new instance with plan of Tiny Turtle
+8. Select any data center
+9. Click review and create instance
+10. Click on your app name and then copy URL
+11. Create env.py file and store there some variables of URL you copied and secret_key 
+12. In settings.py modify databases with variable for URL you just created
+13. Run python manage.py migrate for migrations
+14. Go back to Heroku settings and put config vars. Your databa_url and secret_key
+15. While creating (!ONLY) set Debug = True once you would deploy completely set debug to false again
+Application deployed on [Heroku](https://dashboard.heroku.com/)
 
-###########
+before final deployment is important to create env.py and store there all sensetive information the you don't want other people had acccess 
 
 
 [Table of Contests](#table-of-contests)
@@ -398,13 +543,20 @@ s
 # Credit 
 
 
-########
+Date picker found on Solution found at: https://webpedia.net/how-to-use-datepicker-in-django
+Bootstrap created my responsive design
+Stackoverflow for answer on any questions
+[SimpleIsBetterThanComplex](https://simpleisbetterthancomplex.com/) a lot of good articles about django
 
 
 [Table of Contests](#table-of-contests)
 
 
 # Acknowledgements
+
+Rohit Sharma person who can fix everything in less than 5 min and create entirelly new logic in couple seconds.
+Slack Community
+Code Institute support
 
 
 
