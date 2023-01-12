@@ -94,12 +94,11 @@ color: #de6114;
 
 
 .background-im{
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), transparent),
-  linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent),
-   url(../img/back-train.jpg);
+  
   height: 100vh;
   background-size:cover;
   background-repeat: no-repeat;
+  filter: brightness(50%);
 }
 
 .img-responsive{
