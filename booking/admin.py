@@ -6,4 +6,4 @@ from .models import Booking_class
 @admin.register(Booking_class)
 class Booking_class_Admin(admin.ModelAdmin):
     list_dsiplay = ('user', 'trainers',
-        'requested_date', 'requested_time', 'status')
+                    'requested_date', 'requested_time', 'status')

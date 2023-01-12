@@ -9,7 +9,6 @@ from .models import Booking_class
 from .forms import Booking_class_form
 from django.contrib.auth.decorators import login_required
 import datetime
-from django.views.generic import  UpdateView
 
 
 def check_if_available(user_requested_trainers, user_requested_date,
@@ -20,9 +19,10 @@ def check_if_available(user_requested_trainers, user_requested_date,
             requested_date=user_requested_date,
             requested_time=user_requested_time).exclude(booking_id=None))
 
-    else :    
+    else:
         booking_slot = len(Booking_class.objects.filter(
-            trainers=user_requested_trainers, requested_date=user_requested_date,
+            trainers=user_requested_trainers,
+            requested_date=user_requested_date,
             requested_time=user_requested_time))
 
     return booking_slot
@@ -33,9 +33,9 @@ def check_if_available(user_requested_trainers, user_requested_date,
 @login_required
 def booking_training(request):
     if request.method == 'GET':
-        
+
         booking_class = Booking_class_form()
-      
+
         return render(request, "booking/booking.html", {'Booking_class_form':
                                                         Booking_class_form})
     else:
@@ -92,17 +92,16 @@ def booking_training(request):
             return HttpResponseRedirect(url)
 
 
-
 @login_required
 def check_booked_training(request):
-    
+
     if request.user.is_superuser:
         booked_classes = Booking_class.objects.filter(
             trainers=request.user).order_by(requested_date)
         booked_classes_count = Booking_class.objects.count()
         if booked_classes_count == 0:
             messages.add_message(request, messages.ERROR,
-                                    "Nothing booked.")
+                                 "Nothing booked.")
         url = reverse('home')
         return HttpResponseRedirect(url)
     else:
@@ -123,12 +122,11 @@ def check_booked_training(request):
     return render(request, template, context)
 
 
-
-
 @login_required
 def edit(request, booking_id):
 
-    training_edit = get_object_or_404(Booking_class, pk=booking_id, user=request.user)
+    training_edit = get_object_or_404(Booking_class, pk=booking_id,
+                                      user=request.user)
 
     if request.method == 'POST':
         booking_form = Booking_class_form(data=request.POST,
@@ -174,6 +172,7 @@ def edit(request, booking_id):
             }
     return render(request, template, context)
 
+
 @login_required()
 def delete_booking(request, booking_id):
 
@@ -185,7 +184,8 @@ def delete_booking(request, booking_id):
         url = reverse('account_login')
         return HttpResponseRedirect(url)
 
-    booking_to_delete = get_object_or_404(Booking_class, pk=booking_id, user=request.user)
+    booking_to_delete = get_object_or_404(Booking_class, pk=booking_id,
+                                          user=request.user)
     booking_to_delete.delete()
     messages.add_message(
             request, messages.SUCCESS,

@@ -4,71 +4,48 @@
     Homepage
 {% endblock %}
 {% block content %}
-<section>
-    <div class="container relative"></div>
-      <div class="row">
-        <div class="col hero-1 ">
-          <div class="justify-content-center">
-            <div>
-                <h1 class="text-white text-center my-5" >
-                    Keep your body fit & strong
-                </h1>
-            </div>
-            <div class=" justify-content-center">
-                <img src="../../../static/img/gym-ho(1).jpg" class="img-responsive" alt="Two legs wtih weight in front of him">
-            </div>
-            <div class="container">
-                <div class="row">
-                  <div class=" justify-content-center mt-5 ">
-                    <p class="text-center text-white"> Nowadays training with additional weight become highly popular and no wonder. Such life style 
-                        gives you lots addvantages as makes body stronger, improves heart health, greate mobility
-                        and flexibility. Apart of phhysical health such type of training chanhe You as a person. People
-                         who train more than three month become more self comfident, disciplined and motivated for new 
-                         achievements. If this is something you are looking to improve also than join our team of proffesionals
-                         and let's ROCK!
-                    </p>
-                  </div>
-                </div>
-                <div class="d-flex justify-content-center mt-5 ">
-                    <a class="btn btn-login  " href="{% url 'training' %}">
-                        Find Out More
-                    </a>
-                </div>
-            </div>
-          </div>
-        </div>
-        <div class="col hero-2 ">
-          <div class="justify-content-center">
-            <div>
-                <h1 class="text-white text-center my-5">
-                    Connect Your Mind, Body And Soul
-                </h1>
-            </div>
-            <div class=" justify-content-center ">
-                <img src="../../../static/img/yoga-home.jpg" class="img-responsive" alt="Woman making yoga exercise">
-            </div>
-            <div class="container">
-                <div class="row">
-                  <div class=" justify-content-center mt-5">
-                    <p class="text-center text-white"> 
-                        For those who preffer calmer way of training but defenitely not easier we offer Yoga. Especially now Yoga might 
-                        be powerfull as it helps to be more concentrated and get rid of stress at the same time and that is only small 
-                        bonusses that Yoga offers. Yoga can ease arthritis, protect you from injury, increase cognitive availability
-                         big community where you can find variety of people and potential friends it is so important. Sounds like for you? Check out what type of yoga our 
-                         amazing team offers for you.
-                    </p>
-                  </div>
-                </div>
-            </div>
-            <div class="d-flex justify-content-center mt-5 ">
-                <a class="btn btn-login  " href="{% url 'training' %}">
-                    Find Out More
-                </a>
-            </div>
-          </div>
-        </div>
+
+<div class="container">
+  <div class="row ">
+    <div class="col ">
+      <h2 class="text-dark    d-flex justify-content-center mb-4 " >
+        Keep Yourself Fit
+    </h2>
+    <div class=" d-flex justify-content-center" id="">
+      <img src="../../../static/img/hero-1.jpg" class="hero-1" id="" alt="">
+    </div>
+    </div>
+    <div class="d-flex justify-content-around " id="">
+      <p class="p-size-1 p-5" id="">Nowadays training with additional weight become highly popular and no wonder. Such life style 
+        gives you lots addvantages as makes body stronger, improves heart health, greate mobility
+        and flexibility. Apart of phhysical health such type of training chanhe You as a person. People
+         who train more than three month become more self comfident, disciplined and motivated for new 
+         achievements. If this is something you are looking to improve also than join our team of proffesionals
+         and let's ROCK!</p>
+    </div>
+  </div>
+    <div class="row">
+      <div class="col">
+        <h2 class="text-dark d-flex justify-content-center mb-4" >
+          Connect Mind And Body
+      </h2>
+      <div class=" d-flex justify-content-center" id="">
+        
+        <img src="../../../static/img/hero-2.jpg" class="hero-2" id="" alt="">
+      </div>
+      </div>
+      <div class="d-flex justify-content-around" id="">
+      <p class="p-size-2 p-5  " id="">For those who preffer calmer way of training but defenitely not easier we offer Yoga. Especially now Yoga might 
+        be powerfull as it helps to be more concentrated and get rid of stress at the same time and that is only small 
+        bonusses that Yoga offers. Yoga can ease arthritis, protect you from injury, increase cognitive availability
+         big community where you can find variety of people and potential friends it is so important. Sounds like for you? Check out what type of yoga our 
+         amazing team offers for you.</p>
       </div>
     </div>
-  </section>
-
+    <div class="d-flex justify-content-center my-5 " id="b-h">
+      <a class="btn btn-login  " href="{% url 'training' %}">
+          Find Out More
+      </a>
+    </div>
+</div>
 {% endblock %}
