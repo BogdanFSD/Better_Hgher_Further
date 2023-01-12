@@ -8,15 +8,22 @@ from django.contrib.auth.decorators import login_required
 from .models import Booking_class
 from .forms import Booking_class_form
 from django.contrib.auth.decorators import login_required
-# import login_required
 import datetime
+from django.views.generic import  UpdateView
 
 
 def check_if_available(user_requested_trainers, user_requested_date,
-                       user_requested_time):
-    booking_slot = len(Booking_class.objects.filter(
-        trainers=user_requested_trainers, requested_date=user_requested_date,
-        requested_time=user_requested_time))
+                       user_requested_time, booking_id=None):
+    if booking_id:
+        booking_slot = len(Booking_class.objects.filter(
+            trainers=user_requested_trainers,
+            requested_date=user_requested_date,
+            requested_time=user_requested_time).exclude(booking_id=None))
+
+    else :    
+        booking_slot = len(Booking_class.objects.filter(
+            trainers=user_requested_trainers, requested_date=user_requested_date,
+            requested_time=user_requested_time))
 
     return booking_slot
 
@@ -116,36 +123,12 @@ def check_booked_training(request):
     return render(request, template, context)
 
 
-# class EditBookings(UpdateView):
-#     # form_class = Booking_class_form
-#     # tempplate = 'booking/edit.html'
-#     # model = Booking_class
 
-#     def get_form(self):
-#         form = super().get_form()
-#         form.fields['requested_date'].widget = DateInput
-#         form.fields['requested_time'].widget = Select
-#         form.fields['trainers'].widget = Select
-
-#     def form_valid(self, form):
-#         user = form.cleaned_data['user']
-#         form.instance.user = self.request.user
-#         requested_date = form.cleaned_data['requested_date']
-#         requested_time = form.cleaned_data['requested_time']
-
-#         return super(Booking_class, self).form_falid(form)
-
-#     messages.add_message(
-#         request, messages.SUCCESS,
-#             "Booking has been cancelled")
 
 @login_required
 def edit(request, booking_id):
 
-    
-    training_edit = get_object_or_404(Booking_class, pk=booking_id)
-    # training_edit.requested_date = datetime.datetime.strftime(
-    #                         training_edit.requested_date, '%d/%m/%Y')
+    training_edit = get_object_or_404(Booking_class, pk=booking_id, user=request.user)
 
     if request.method == 'POST':
         booking_form = Booking_class_form(data=request.POST,
@@ -191,7 +174,7 @@ def edit(request, booking_id):
             }
     return render(request, template, context)
 
-
+@login_required()
 def delete_booking(request, booking_id):
 
     if not request.user.is_authenticated:
@@ -202,7 +185,7 @@ def delete_booking(request, booking_id):
         url = reverse('account_login')
         return HttpResponseRedirect(url)
 
-    booking_to_delete = get_object_or_404(Booking_class, pk=booking_id)
+    booking_to_delete = get_object_or_404(Booking_class, pk=booking_id, user=request.user)
     booking_to_delete.delete()
     messages.add_message(
             request, messages.SUCCESS,

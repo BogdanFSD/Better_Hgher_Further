@@ -17,8 +17,14 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title> {% block head_title %}Better Higher Further{% endblock %}</title>
     <!--EmailJs-->
-    {% block email_js %}
-    {% endblock %}
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+   (function(){
+      emailjs.init("PnNIz_5JC9qfsENAO");
+   })();
+</script>
 </head>
 <body>
     <header>
