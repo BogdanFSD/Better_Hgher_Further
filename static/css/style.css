@@ -83,7 +83,7 @@ color: #de6114;
   linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent),
   url(../img/hero-1.jpg);
   width: 50%;
-  height: 100vh;
+  
   background-size:cover;
   background-repeat: no-repeat;
 }
@@ -93,6 +93,7 @@ color: #de6114;
   linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent),
    url(../img/hero-2.jpg);
   width: 50%;
+  height: 100vh
   background-size:cover;
   background-repeat: no-repeat;
   
@@ -176,9 +177,7 @@ bottom:-1000%;
 /* FOOTER*/
 
 
-footer{
-  height: 24rem;
-}
+
 
 footer a{
   text-decoration: none;
