@@ -97,7 +97,7 @@ def check_booked_training(request):
 
     if request.user.is_superuser:
         booked_classes = Booking_class.objects.filter(
-            trainers=request.user).order_by(requested_date)
+            trainers=request.user).order_by('requested_date')
         booked_classes_count = Booking_class.objects.count()
         if booked_classes_count == 0:
             messages.add_message(request, messages.ERROR,

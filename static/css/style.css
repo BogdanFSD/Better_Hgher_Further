@@ -2,6 +2,7 @@
 
 body{
   overflow-x: hidden;
+  font-family: 'Libre Baskerville', serif;
 }
 
 .navbar ul li:hover {
@@ -112,7 +113,7 @@ color: #de6114;
   position: absolute;
   top: 30%;
   left: 60%;
-  color:#fff;
+  color:#;
 }
 
 .overlay-left{
