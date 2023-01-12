@@ -29,11 +29,11 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['better-higher-further.heroku.app', 'localhost']
+ALLOWED_HOSTS = ['better-higher-further.herokuapp.com', 'localhost']
 
 
 # Application definition
