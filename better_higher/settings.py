@@ -29,7 +29,9 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ['better-higher-further.heroku.app', 'localhost']
 
@@ -53,7 +55,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'crispy_forms',
     'booking',
-    
+
 ]
 
 SITE_ID = 1
@@ -73,7 +75,7 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = False
 ACCOUNT_USERNAME_MIN_LENGTH = 4
-#LOGIN_URL = '/accounts/login/'
+
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
@@ -158,8 +160,6 @@ USE_I18N = True
 USE_L10N = True
 
 # DATE_INPUT_FORMATS = ['%d-%m-%Y']
-
-
 
 
 USE_TZ = True
