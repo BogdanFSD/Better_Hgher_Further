@@ -4,8 +4,6 @@ from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
-# Available time for booking training
-
 TIME_CHOICES = [
     ("09:00", "09:00"),
     ("10:00", "10:00"),
@@ -18,16 +16,11 @@ TIME_CHOICES = [
     ("17:00", "17:00")
 ]
 
-# Status of booking
-
-
 status_of_class = [
     ("confirmed", "confirmed"),
     ("rejected", "rejected"),
     ("In progress", "In progress")
 ]
-
-# Trainers to choose
 
 class_trainers = []
 trainers = User.objects.filter(is_staff=True)
