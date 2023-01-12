@@ -1,28 +1,33 @@
 {% extends "base.html" %}
 {% load static %}
 {% block head_title %}
-    About Us
+About Us
 {% endblock %}
 {% block content %}
 <section>
-    <div class="container-fluid bg-dark text-white text-center"> 
+    <div class="container-fluid bg-dark text-white text-center">
         <div class="d-flex justify-content-center">
-            <h1>What we are doing?</h1>
+            <h2>What we are doing?</h2>
         </div>
     </div>
     <div class="row">
         <div class="col text-center">
-            <a href="{% url 'training' %}"><img src="{% static '../static/img/about-1.jpg' %}" alt="photo of the gym" class="img-fluid mb-1 h-100" id="show"></a>
+            <a href="{% url 'training' %}"><img src="{% static '../static/img/about-1.jpg' %}" alt="photo of the gym"
+                    class="img-fluid mb-1 h-100" id="show"></a>
         </div>
-        <div class="col " id="show">
-            <p class="text-start mt-2 w-100">We are group of people that are sport lovers. Our lives would never be the same as before we started our
-                training. We are at the point when we can teach somebody who is willing to make his/her life better. 
+        <div class="col " id="show-1">
+            <p class="text-start mt-2 w-100">We are group of people that are sport lovers. Our lives would never be the
+                same as before we started our
+                training. We are at the point when we can teach somebody who is willing to make his/her life better.
                 Sport is great opportunity to upgrade yourself and check your limits
             </p>
             <p class="text-start">
-                We offer two different ways to start this amazing journey. First one is well know method that even ancient Greeks being using. 
-                That is training with additional weights. For those who is looking for something different we can offer Yoga training. There are 
-                lots of different method and Yoga positions that would benefit your body. Our main mission is to make peoples life better.
+                We offer two different ways to start this amazing journey. First one is well know method that even
+                ancient Greeks being using.
+                That is training with additional weights. For those who is looking for something different we can offer
+                Yoga training. There are
+                lots of different method and Yoga positions that would benefit your body. Our main mission is to make
+                peoples life better.
             </p>
             <div class="d-flex justify-content-center mt-5 pt-5 ">
                 <a class="btn btn-login  " href="{% url 'booking' %}">
@@ -30,15 +35,19 @@
                 </a>
             </div>
         </div>
-        <div class="w-50 dispplay texr-center" id="">
-            <p class="text-center">We are group of people that are sport lovers. Our lives would never be the same as before we started our
-                training. We are at the point when we can teach somebody who is willing to make his/her life better. 
+        <div class="w-50 dispplay texr-center">
+            <p class="text-center">We are group of people that are sport lovers. Our lives would never be the same as
+                before we started our
+                training. We are at the point when we can teach somebody who is willing to make his/her life better.
                 Sport is great opportunity to upgrade yourself and check your limits
             </p>
             <p class="text-center ">
-                We offer two different ways to start this amazing journey. First one is well know method that even ancient Greeks being using. 
-                That is training with additional weights. For those who is looking for something different we can offer Yoga training. There are 
-                lots of different method and Yoga positions that would benefit your body. Our main mission is to make peoples life better.
+                We offer two different ways to start this amazing journey. First one is well know method that even
+                ancient Greeks being using.
+                That is training with additional weights. For those who is looking for something different we can offer
+                Yoga training. There are
+                lots of different method and Yoga positions that would benefit your body. Our main mission is to make
+                peoples life better.
             </p>
             <div class="d-flex justify-content-center mt-5 pt-5 dispplay">
                 <a class="btn btn-login  " href="{% url 'booking' %}">
@@ -46,9 +55,10 @@
                 </a>
             </div>
         </div>
-        
+
         <div class="col text-center">
-            <a href="{% url 'training' %}"><img src="{% static '../static/img/about-3.jpg' %}" alt="beautiful yoga position" class="img-fluid mb-1 h-100" id="show"></a>
+            <a href="{% url 'training' %}"><img src="{% static '../static/img/about-3.jpg' %}"
+                    alt="beautiful yoga position" class="img-fluid mb-1 h-100" id="show-3"></a>
         </div>
     </div>
 </section>

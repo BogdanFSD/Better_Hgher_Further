@@ -247,6 +247,12 @@ footer a{
   #show{
     display: none;
    }
+   #show-1{
+    display: none;
+   }
+   #show-3{
+    display: none;
+   }
    .dispplay{
     display: block;
   }

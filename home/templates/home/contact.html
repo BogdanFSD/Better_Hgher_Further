@@ -1,14 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
 {% block head_title %}
-    Contact Us
+Contact Us
 {% endblock %}
 {% block email_js %}
-  <script type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-  </script>
-  <script type="text/javascript"
-  src="../static/js/sendEmail.js">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript" src="../static/js/sendEmail.js">
 </script>
 {% endblock %}
 {% block content %}
@@ -20,30 +18,36 @@
     <div class="container  ">
         <div class="col-10">
             <form onsubmit="return sendEmail(this);" method="POST" id="contact_form">
-              {% csrf_token %}
-              <h2>Call Us</h2>
-              <p><i class="fa-solid fa-phone"></i> 07717 755 970</p>
+                {% csrf_token %}
+                <h2>Call Us</h2>
+                <p><i class="fa-solid fa-phone"></i> 07717 755 970</p>
                 <div class=" form-group">
-                    <input class="form-control mb-3 inp-wid" type="text" name="name" id="contact-name" placeholder="Name" title="Enter your name">
+                    <input class="form-control mb-3 inp-wid" type="text" name="name" id="contact-name"
+                        placeholder="Name" title="Enter your name">
                 </div>
                 <div class=" form-group">
-                    <input class="form-control mb-3 inp-wid" type="email" name="email" id="contact-email" placeholder="Email Address" title="Enter your email">
+                    <input class="form-control mb-3 inp-wid" type="email" name="email" id="contact-email"
+                        placeholder="Email Address" title="Enter your email">
                 </div>
                 <div class="">
-                    <textarea class="form-control rounded inp-wid" name="request" id="classes-choice" cols="30" rows="10" placeholder="Write your message here." title="Write your message here."></textarea>
+                    <textarea class="form-control rounded inp-wid" name="request" id="classes-choice" cols="30"
+                        rows="10" placeholder="Write your message here." title="Write your message here."></textarea>
                 </div>
                 <div class="col-12  d-flex justify-content-center my-3">
-                  <input type="submit" class="btn btn-login" value="Submit Button">
+                    <input type="submit" class="btn btn-login" value="Submit Button">
                 </div>
             </form>
         </div>
-        
+
     </div>
-    
-    <div class="container " id="hide">  
-        <div class="col-6 " >
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20082.060261950617!2d-3.072874476660153!3d51.01139095128356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486df50bea5a1bfb%3A0x98a6eaff6ef177f2!2sBlackbrook%20Leisure%20Centre%20%26%20Spa!5e0!3m2!1suk!2suk!4v1673315536060!5m2!1suk!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-        </div>
+
+    <div class="container " id="hide">
+        <div class="col-6 ">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20082.060261950617!2d-3.072874476660153!3d51.01139095128356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486df50bea5a1bfb%3A0x98a6eaff6ef177f2!2sBlackbrook%20Leisure%20Centre%20%26%20Spa!5e0!3m2!1suk!2suk!4v1673315536060!5m2!1suk!2suk"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe></div>
     </div>
 </div>
+
 {% endblock%}
