@@ -4,11 +4,11 @@
 
 Better Higher Further is a health center where User can choose between Gym and Yoga training to make health **Better**, life standarts **Higher** and live **Further**. User can choose most suitable day, hour and trainer to book  session with so he/she can controll his training as much as possible. Due to bank holidays or other occasion workiing hours more likely to change so health center will update Users with relevant information.
 
+![Front Page](static/img/front_page.jpg)
 
-![Site view](#)
 
 
-Live link for "Better Higher Further" [Here](#)
+Live link for "Better Higher Further" [Here](https://better-higher-further.herokuapp.com/)
 
 
 ## Table of Contests
@@ -28,8 +28,6 @@ Live link for "Better Higher Further" [Here](#)
 - [Design](#design)
     - [Colour Scheme](#colour-scheme)
     - [Font](#font)
-    - [Wireframes](#wireframes)
-    - [Images](#images)
 - [Technologies Used](#technologies-used)
     - [Languages](#languages)
     - [Frameworks, libraries etc.](#frameworks-libraries-etc.)
@@ -147,20 +145,6 @@ As for fonts I choose Baskerville and Signika. I believe they compliment each ot
 
 [Table of Contests](#table-of-contests)
 
-
-## Wireframes
-
-
-##########
-
-
-[Table of Contests](#table-of-contests)
-
-
-## Images
-
-
-#############
 
 
 [Table of Contests](#table-of-contests)
