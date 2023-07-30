@@ -44,4 +44,4 @@ class Booking_class(models.Model):
 
 def __str__(self):
 
-    return str(self.pk)
+    return f"{self.user} - {self.trainers} - {self.status}"

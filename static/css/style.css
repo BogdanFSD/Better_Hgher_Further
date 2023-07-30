@@ -212,6 +212,10 @@ footer a{
   display: none;
 }
 
+#form-input{
+  display: inline-block;
+}
+
 @media (min-width:1201px){
   .p-size-1{
     width: 40%;
