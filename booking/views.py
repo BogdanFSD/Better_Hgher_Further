@@ -5,7 +5,7 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import Booking_class
+from .models import BookingClass
 from .forms import Booking_class_form
 from django.contrib.auth.decorators import login_required
 import datetime
@@ -14,13 +14,13 @@ import datetime
 def check_if_available(user_requested_trainers, user_requested_date,
                        user_requested_time, booking_id=None):
     if booking_id:
-        booking_slot = len(Booking_class.objects.filter(
+        booking_slot = len(BookingClass.objects.filter(
             trainers=user_requested_trainers,
             requested_date=user_requested_date,
             requested_time=user_requested_time).exclude(booking_id=None))
 
     else:
-        booking_slot = len(Booking_class.objects.filter(
+        booking_slot = len(BookingClass.objects.filter(
             trainers=user_requested_trainers,
             requested_date=user_requested_date,
             requested_time=user_requested_time))
@@ -96,18 +96,18 @@ def booking_training(request):
 def check_booked_training(request):
 
     if request.user.is_superuser:
-        booked_classes = Booking_class.objects.filter(
+        booked_classes = BookingClass.objects.filter(
             trainers=request.user).order_by('requested_date')
-        booked_classes_count = Booking_class.objects.count()
+        booked_classes_count = BookingClass.objects.count()
         if booked_classes_count == 0:
             messages.add_message(request, messages.ERROR,
                                  "Nothing booked.")
         url = reverse('home')
         return HttpResponseRedirect(url)
     else:
-        booked_classes = Booking_class.objects.filter(
+        booked_classes = BookingClass.objects.filter(
                             user=request.user).order_by('requested_date')
-        booked_classes_count = Booking_class.objects.count()
+        booked_classes_count = BookingClass.objects.count()
         if booked_classes_count == 0:
             messages.add_message(
                 request, messages.ERROR,
@@ -125,7 +125,7 @@ def check_booked_training(request):
 @login_required
 def edit(request, booking_id):
 
-    training_edit = get_object_or_404(Booking_class, pk=booking_id,
+    training_edit = get_object_or_404(BookingClass, pk=booking_id,
                                       user=request.user)
 
     if request.method == 'POST':
@@ -184,7 +184,7 @@ def delete_booking(request, booking_id):
         url = reverse('account_login')
         return HttpResponseRedirect(url)
 
-    booking_to_delete = get_object_or_404(Booking_class, pk=booking_id,
+    booking_to_delete = get_object_or_404(BookingClass, pk=booking_id,
                                           user=request.user)
     booking_to_delete.delete()
     messages.add_message(

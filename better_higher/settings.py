@@ -33,7 +33,7 @@ DEBUG = True    # false
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['better-higher-further.herokuapp.com', 'localhost', '8000-bogdanfsd-betterhigherf-vbbn8afy4h7.ws-eu102.gitpod.io', '127.0.0.1']
+ALLOWED_HOSTS = ['better-higher-further.herokuapp.com', 'localhost', '8000-bogdanfsd-betterhigherf-vbbn8afy4h7.ws-eu102.gitpod.io', '127.0.0.1', "8000-bogdanfsd-betterhigherf-e0ldgfnicz9.ws-eu102.gitpod.io"]
 
 
 # Application definition
