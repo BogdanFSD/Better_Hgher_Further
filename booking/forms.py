@@ -1,8 +1,9 @@
 from django import forms
 from django.forms import ModelForm, TextInput, EmailInput, Select
-from .models import Booking_class
+from .models import BookingClass
 from django.conf import settings
 import datetime
+from .utils import get_trainers
 
 
 class DateInput(forms.DateInput):
@@ -10,8 +11,19 @@ class DateInput(forms.DateInput):
 
 
 class Booking_class_form(forms.ModelForm):
+    trainers = forms.ChoiceField(choices=[])
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['trainers'].choices = get_trainers()
+
+    trainers = forms.ChoiceField(
+        widget=forms.Select(attrs={'class': "form-control text-center attr"}),
+        choices=[]
+    )
+    
     class Meta:
-        model = Booking_class
+        model = BookingClass
         fields = ('trainers', 'requested_date', 'requested_time')
         widgets = {
             'requested_date': DateInput(
@@ -19,8 +31,6 @@ class Booking_class_form(forms.ModelForm):
                        'min': datetime.date.today()+datetime.timedelta(days=2),
                        'max': datetime.date.today()+datetime.timedelta(days=30)
                        }),
-            'trainers': Select(attrs={
-                'class': "form-control text-center attr"}),
             'requested_time': Select(attrs={
                 'class': "form-control text-center attr"
             })

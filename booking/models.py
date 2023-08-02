@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from .utils import get_trainers
 
 # Create your models here.
 
@@ -22,18 +23,12 @@ status_of_class = [
     ("In progress", "In progress")
 ]
 
-class_trainers = []
-trainers = User.objects.filter(is_staff=True)
-for trainer in trainers:
-    class_trainers.append(((str(trainer.username)), str(trainer.username)))
-
 # Booking specific trainer for a class
 
 
-class Booking_class(models.Model):
+class BookingClass(models.Model):
     user = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
-    trainers = models.CharField(max_length=10,
-                                choices=class_trainers,
+    trainers = models.CharField(max_length=20,
                                 default="Karol")
     requested_date = models.DateField(null=True)
     requested_time = models.CharField(max_length=10, choices=TIME_CHOICES,
@@ -44,4 +39,4 @@ class Booking_class(models.Model):
 
 def __str__(self):
 
-    return str(self.pk)
+    return f"{self.user} - {self.trainers} - {self.status}"

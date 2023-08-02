@@ -3,6 +3,9 @@
 body{
   overflow-x: hidden;
   font-family: 'Libre Baskerville', serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .navbar ul li:hover {
@@ -152,7 +155,9 @@ bottom:-1000%;
 
 /* FOOTER*/
 
-
+footer {
+  margin-top: auto;
+}
 
 
 footer a{
@@ -210,6 +215,10 @@ footer a{
  
 .dispplay{
   display: none;
+}
+
+#form-input{
+  display: inline-block;
 }
 
 @media (min-width:1201px){

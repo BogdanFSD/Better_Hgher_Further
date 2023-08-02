@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import Booking_class
+from .models import BookingClass
 # Register your models here.
 
 
-@admin.register(Booking_class)
+@admin.register(BookingClass)
 class Booking_class_Admin(admin.ModelAdmin):
     list_dsiplay = ('user', 'trainers',
                     'requested_date', 'requested_time', 'status')
